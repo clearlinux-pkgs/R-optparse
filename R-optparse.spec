@@ -4,16 +4,20 @@
 #
 Name     : R-optparse
 Version  : 1.6.1
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/optparse_1.6.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/optparse_1.6.1.tar.gz
 Summary  : Command Line Option Parser
 Group    : Development/Tools
 License  : GPL-2.0 GPL-2.0+ Python-2.0
-Requires: R-getopt
-Requires: R-rlang
+Requires: R-assertthat
+Requires: R-cli
+Requires: R-withr
+BuildRequires : R-assertthat
+BuildRequires : R-cli
 BuildRequires : R-getopt
 BuildRequires : R-rlang
+BuildRequires : R-withr
 BuildRequires : buildreq-R
 
 %description
@@ -28,10 +32,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1547600718
+export SOURCE_DATE_EPOCH=1552837120
 
 %install
-export SOURCE_DATE_EPOCH=1547600718
+export SOURCE_DATE_EPOCH=1552837120
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -67,8 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library optparse|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  optparse || :
 
 
 %files
@@ -101,3 +104,7 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/optparse/help/paths.rds
 /usr/lib64/R/library/optparse/html/00Index.html
 /usr/lib64/R/library/optparse/html/R.css
+/usr/lib64/R/library/optparse/tests/run-all.R
+/usr/lib64/R/library/optparse/tests/test_help.R
+/usr/lib64/R/library/optparse/tests/test_help.Rout.save
+/usr/lib64/R/library/optparse/tests/testthat/test-optparse.R
