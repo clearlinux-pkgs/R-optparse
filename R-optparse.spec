@@ -4,7 +4,7 @@
 #
 Name     : R-optparse
 Version  : 1.6.4
-Release  : 24
+Release  : 25
 URL      : https://cran.r-project.org/src/contrib/optparse_1.6.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/optparse_1.6.4.tar.gz
 Summary  : Command Line Option Parser
@@ -13,6 +13,7 @@ License  : GPL-2.0 GPL-2.0+ Python-2.0
 Requires: R-getopt
 BuildRequires : R-getopt
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 optparse: Command line optional argument parser
@@ -26,10 +27,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568910983
+export SOURCE_DATE_EPOCH=1571870703
 
 %install
-export SOURCE_DATE_EPOCH=1568910983
+export SOURCE_DATE_EPOCH=1571870703
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
