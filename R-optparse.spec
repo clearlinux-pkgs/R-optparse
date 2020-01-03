@@ -4,7 +4,7 @@
 #
 Name     : R-optparse
 Version  : 1.6.4
-Release  : 26
+Release  : 27
 URL      : https://cran.r-project.org/src/contrib/optparse_1.6.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/optparse_1.6.4.tar.gz
 Summary  : Command Line Option Parser
