@@ -4,10 +4,10 @@
 #
 Name     : R-optparse
 Version  : 1.6.6
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/optparse_1.6.6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/optparse_1.6.6.tar.gz
-Summary  : R command line parser inspired by Python's 'optparse'
+Summary  : Command Line Option Parser
 Group    : Development/Tools
 License  : GPL-2.0 GPL-2.0+ Python-2.0
 Requires: R-getopt
@@ -15,26 +15,27 @@ BuildRequires : R-getopt
 BuildRequires : buildreq-R
 
 %description
-optparse: Command line optional argument parser
-===============================================
+be used with Rscript to write "#!" shebang scripts that accept short and
+    long flag/options.
 
 %prep
 %setup -q -c -n optparse
+cd %{_builddir}/optparse
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1587086354
+export SOURCE_DATE_EPOCH=1589536959
 
 %install
-export SOURCE_DATE_EPOCH=1587086354
+export SOURCE_DATE_EPOCH=1589536959
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
