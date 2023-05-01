@@ -4,7 +4,7 @@
 #
 Name     : R-optparse
 Version  : 1.7.3
-Release  : 51
+Release  : 52
 URL      : https://cran.r-project.org/src/contrib/optparse_1.7.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/optparse_1.7.3.tar.gz
 Summary  : Command Line Option Parser
